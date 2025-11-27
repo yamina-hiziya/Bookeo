@@ -1,6 +1,14 @@
 <?php
-require_once 'templates/header.php';
-require_once 'templates/home.php';
+spl_autoload_register();
+
+use App\Controller\Controller;
+
+$controller = new Controller();
+$controller->route('page');
+
+
+
+
 
 
 
