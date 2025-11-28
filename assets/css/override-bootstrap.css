@@ -53,7 +53,7 @@
 }
 
 h1 {
-  color: var(--primary);
+    color: var(--primary);
 }
 
 h2, h3 {
