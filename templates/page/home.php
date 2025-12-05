@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/header.php'; ?>
+<?php require_once __DIR__ . '/../header.php'; ?>
 
 <main>
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -42,4 +42,4 @@
         </div>
     </div>
 </main>
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php require_once __DIR__ . '/../footer.php'; ?>

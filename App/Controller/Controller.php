@@ -6,29 +6,39 @@ use App\Controller\PageController;
 
 class Controller
 {
+
     public function route(): void
     {
-        if (isset($_GET['controller'])) {
-            switch ($_GET['controller']) {
-                case 'page':
-                    echo "DEBUG: On est dans le case 'page'<br>";
-                    //charger controller page
-                    $PageController = new PageController();
-                    $PageController->route();
-                    break;
-                case 'book':
-                    //charger controller book
-
-                    break;
-                default:
-                    //erreur 
-                    break;
+        try {
+            if (isset($_GET['controller'])) {
+                switch ($_GET['controller']) {
+                    case 'page':
+                        //charger controlleur page 
+                        $pageController = new PageController();
+                        $pageController->route();
+                        break;
+                    case 'book':
+                        // charger controlleur book
+                        $bookController = new BookController();
+                        $bookController->route();
+                        break;
+                    default:
+                        //erreur 
+                        throw new \Exception("Le Controlleur n'existe pas");
+                        break;
+                }
+            } else {
+                //chargement de la page d'accueil si pas de controlleur dans l'url
+                $pageController = new PageController();
+                $pageController->home();
             }
-        } else {
-            //charger la page d'accueil
-            $this->home();
+        } catch (\Exception $e) {
+            $this->render('errors/default', [
+                'error' => $e->getMessage()
+            ]);
         }
     }
+
 
 
     protected function home(): void
@@ -44,11 +54,15 @@ class Controller
                 //alors generer une erreur 404
                 throw new \Exception("Fichier non trouvé : " . $filePath);
             } else {
+                //extrait chaque ligne du tableau et crée des variables pour chaque clé
+                extract($params);
                 require_once $filePath;
             }
         } catch (\Exception $e) {
-            //gerer l'exception
-            echo $e->getMessage();
+            //gerer l'exception et afficher une page d'erreur
+            $this->render('errors/default', [
+                'error' => $e->getMessage()
+            ]);
         }
     }
 }
