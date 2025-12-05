@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'db_name' => 'studi_bookeo',
-    'db_user' => 'root',
-    'db_password' => '',
-    'db_port' => 3306,
-    'db_host' => 'localhost',
+    'db_name' => getenv('DB_NAME'),
+    'db_user' => getenv('DB_USER'),
+    'db_password' => getenv('DB_PASS'),
+    'db_port' => getenv('DB_PORT'),
+    'db_host' => getenv('DB_HOST'),
 ];

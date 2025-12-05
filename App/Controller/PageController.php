@@ -34,8 +34,10 @@ class PageController extends Controller
         }
     }
 
-
-
+    /*
+Example d'appel depuis l'url
+?controller=page&action=about
+*/
     protected function about(): void
     {
         /*on pourrait recuperer les données
@@ -50,6 +52,10 @@ class PageController extends Controller
         ]);
     }
 
+    /*
+    Example d'appel depuis l'url
+    ?controller=page&action=home
+    */
     protected function home(): void
     {
         /*on pourrait recuperer les données

@@ -1,0 +1,32 @@
+# Fichiers de configuration sensibles
+.env
+config.php
+
+# Dépendances
+vendor/
+node_modules/
+
+# Fichiers uploadés par les utilisateurs
+uploads/
+files/
+
+# Logs
+*.log
+logs/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

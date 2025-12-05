@@ -27,7 +27,7 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+                <li><a href="<?php echo BASE_URL; ?>page/about" class="nav-link px-2 link-dark">About</a></li>
             </ul>
 
             <div class="col-md-3 text-end">

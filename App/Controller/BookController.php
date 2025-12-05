@@ -49,7 +49,10 @@ class BookController extends Controller
     }
 
 
-
+    /* 
+Example d'apple depuis l'url
+?controller=book&action=show&id=1
+*/
     protected function show(): void
     {
         try {

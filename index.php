@@ -5,6 +5,8 @@ ini_set('display_errors', 1);
 define('ROOT_PATH', __DIR__);
 define('BASE_URL', '/Bookeo/');
 
+require_once ROOT_PATH . '/load_env.php';
+
 spl_autoload_register();
 
 use App\Controller\Controller;
